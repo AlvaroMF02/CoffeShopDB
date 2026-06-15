@@ -11,7 +11,6 @@ CREATE TABLE IF NOT EXISTS products (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
     product_name VARCHAR(100) NOT NULL,
     product_type VARCHAR(100) NOT NULL,
-    product_size INT NOT NULL, -- se rellena en python ya que es inventado (1, 2, 3)
     unti_price DECIMAL(10,2) NOT NULL,
     category_id INT NOT NULL,
 

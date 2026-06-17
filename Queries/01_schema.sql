@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS products (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
     product_name VARCHAR(100) NOT NULL,
     product_type VARCHAR(100) NOT NULL,
-    unit_price DECIMAL(10,2) NOT NULL,
+    unit_price DECIMAL(10,2) NOT NULL CHECK (unit_price > 0),
     category_id INT NOT NULL,
 
     FOREIGN KEY (category_id) REFERENCES categories(category_id)
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS employees (
 CREATE TABLE IF NOT EXISTS sales (
     sale_id INT AUTO_INCREMENT PRIMARY KEY,
     sale_date DATE NOT NULL,
-    sale_quantity INT NOT NULL,
+    sale_quantity INT NOT NULL CHECK (sale_quantity > 0),
     sale_time TIME NOT NULL,
     store_id INT NOT NULL,
     product_id INT NOT NULL,

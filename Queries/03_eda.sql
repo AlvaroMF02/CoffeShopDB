@@ -75,10 +75,11 @@ SELECT * FROM sales;
 SET SQL_SAFE_UPDATES = 1;
 
 
-/*	--------------------------
-	ESTUDIUO DE LOS DATOS
-    --------------------------
-*/
+/*	
+	-------------------------------------------------------------------------------------------
+										ESTUDIO DE DATOS
+    -------------------------------------------------------------------------------------------
+*/	
 
 /*
 	RECUENTO DE REGISTROS EN CADA TABLA
@@ -228,7 +229,7 @@ FROM products;
 ------------------------------------------------------------------------
 */
 
--- hay que comprobar la tienda con mas ventas
+--  tiendas y sus ventas
 SELECT st.store_location, COUNT(*) AS total_sales
 FROM sales s JOIN stores st ON s.store_id = st.store_id
 GROUP BY st.store_location
